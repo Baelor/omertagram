@@ -1,4 +1,7 @@
 en:
   commands:
     deaths:
-      header: "Name / Rank / Family / Role / Time"
+      header:
+        one: "Last death:"
+        other: "Last %{count} deaths:"
+      no_deaths: "No deaths reported yet"

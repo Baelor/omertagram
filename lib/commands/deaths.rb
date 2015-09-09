@@ -4,27 +4,34 @@ module Commands
   class Deaths < Commands::Base
     include ActionView::Helpers::DateHelper
 
-    def execute
+    def scoped_users
       family = argument_string
       if family.blank?
-        scope = version.users
+        version.users
       else
         family = version.families.where(name: argument_string.titleize).first
         if family.nil?
           reply I18n.t 'family_not_found'
           return
         end
-        scope = version.users.where(death_family: family.name)
+        version.users.where(death_family: family.name)
       end
+    end
 
-      deaths = [ I18n.t('commands.deaths.header') ]
-      scope.where(alive: false).order('death_date DESC').limit(10).each do |user|
-        death = "#{user.name} / #{user.rank.humanize} / #{user.death_family}"
-        death += '*' if !user.death_family.blank? && user.died_without_family
-        death += " / #{user.family_role.to_s.humanize} / #{time_ago_in_words(user.death_date)}"
-        deaths << death
+    def execute
+      deaths = scoped_users.where(alive: false).order('death_date DESC').limit(10)
+      if deaths.empty?
+        reply I18n.t 'commands.deaths.no_deaths'
+        return
       end
-      reply deaths
+      deaths_msg = [ I18n.t('commands.deaths.header', count: deaths.count) ]
+      deaths.each do |user|
+        death = "[#{user.rank_short}] #{user.name}"
+        death += "@#{user.death_family.truncate(4, omission: '')}" unless user.death_family.blank?
+        death += " #{time_ago_in_words(user.death_date)}"
+        deaths_msg << death
+      end
+      reply deaths_msg
     end
   end
 end
