@@ -57,7 +57,7 @@ group :development do
 end
 
 # use omerta_logger to fetch API updates
-gem 'omerta_logger', git: "git@github.com:Baelor/omerta_logger.git"
+gem 'omerta_logger', github: "Baelor/omerta_logger"
 
 # use telegram-bot-ruby to access the telegram bot API
 gem 'telegram-bot-ruby', '~> 0.3.2'

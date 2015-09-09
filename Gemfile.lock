@@ -1,5 +1,5 @@
 GIT
-  remote: git@github.com:Baelor/omerta_logger.git
+  remote: git://github.com/Baelor/omerta_logger.git
   revision: 8d16882c0d37241020b39ec23a3c95f3f282296b
   specs:
     omerta_logger (0.0.2)
