@@ -67,9 +67,18 @@ gem 'config'
 
 
 gem 'bootstrap-sass', '~> 3.3.5'
+gem 'bootstrap-generators', '~> 3.3.4'
 
 gem 'devise', '~> 3.5.2'
 gem 'devise-bootstrap-views', '~> 0.0.5'
 
 # static pages
 gem 'high_voltage', '~> 2.4.0'
+
+# send messages in the background with sidekiq
+gem 'sidekiq', '~> 3.5.0'
+# sidekiq web UI needs sinatra
+gem 'sinatra', :require => nil
+
+# use foreman to manage app processes
+gem 'foreman', '~> 0.78.0'

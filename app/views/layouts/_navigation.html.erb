@@ -29,24 +29,18 @@
         <li>
           <a href="/#faq">FAQ</a>
         </li>
-        <li>
-          <a href="/#privacy">Privacy</a>
-        </li>
-        <li>
-          <a href="/#feedback">Feedback</a>
-        </li>
         <% if user_signed_in? %>
             <li>
-              <%= link_to 'Dashboard', dashboard_path %>
+              <%= link_to 'News', news_index_path %>
             </li>
             <li>
-              <%= link_to 'News', news_path %>
+              <%= link_to 'Users' %>
             </li>
             <li>
-              <%= link_to 'Users', users_path %>
+              <%= link_to 'Sidekiq', sidekiq_web_path %>
             </li>
             <li>
-              <%= link_to 'Edit account', edit_user_registration_path %>
+              <%= link_to 'My account', edit_user_registration_path %>
             </li>
             <li>
               <%= link_to 'Sign out', destroy_user_session_path, :method=>'delete' %>

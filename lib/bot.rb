@@ -13,8 +13,12 @@ class Bot
     end
   end
 
+  def run_client
+    Telegram::Bot::Client.run(Rails.application.secrets.telegram_token) { |bot| yield(bot) } if block_given?
+  end
+
   def run
-    Telegram::Bot::Client.run(Rails.application.secrets.telegram_token) do |bot|
+    run_client do |bot|
       @commands.each do |_, cmd|
         cmd.bot = bot
       end

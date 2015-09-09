@@ -2,6 +2,11 @@
 <html>
 <head>
   <title><%= (yield(:title) + ' - ' unless yield(:title).blank?).to_s + 'Omerta Beyond Telegram Bot' %></title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="">
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
@@ -11,11 +16,11 @@
   <div class="container main">
     <div class="row">
       <div class="col-lg-12">
-        <% if notice %>
-            <p class="alert alert-success"><%= notice %></p>
-        <% end %>
-        <% if alert %>
-            <p class="alert alert-danger"><%= alert %></p>
+        <% flash.each do |name, msg| %>
+          <%= content_tag :div, class: "alert alert-#{ case name when "alert" then "danger" else "success" end } alert-dismissable", role: "alert" do %>
+            <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            <%= msg %>
+          <% end %>
         <% end %>
         <%= yield %>
       </div>

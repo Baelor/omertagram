@@ -2,7 +2,7 @@
 class CreateOmertaLoggerUserFamilyHistories < ActiveRecord::Migration
   def change
     create_table :omerta_logger_user_family_histories do |t|
-      t.references :devise, index: true
+      t.references :user, index: true
       t.references :family, index: true
       t.datetime :date
       t.integer :family_role

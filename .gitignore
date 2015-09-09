@@ -22,3 +22,8 @@ config/settings/*.local.yml
 config/environments/*.local.yml
 
 .idea/
+
+/vendor/redis/db/*
+!/vendor/redis/db/.keep
+
+/config/unicorn.rb

@@ -10,6 +10,7 @@ AllCops:
     - !ruby/regexp /old_and_unused\.rb$/
     - 'vendor/**/*'
     - 'bin/*'
+    - 'test/**/*'
 Metrics/AbcSize:
   Max: 40
 Style/SpaceInsideBrackets:
@@ -21,4 +22,3 @@ Metrics/MethodLength:
 Style/ClassAndModuleChildren:
   Exclude:
     - 'app/controllers/users/*'
-    - 'test/test_helper.rb'

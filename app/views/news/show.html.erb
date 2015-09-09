@@ -1,0 +1,32 @@
+<div class="page-header">
+  <%= link_to news_index_path, class: 'btn btn-default' do %>
+    <span class="glyphicon glyphicon-list-alt"></span>
+    Back
+  <% end %>
+  <%= link_to edit_news_path(@news), class: 'btn btn-primary' do %>
+    <span class="glyphicon glyphicon-pencil"></span>
+    Edit
+  <% end %>
+  <h1>Show news</h1>
+</div>
+
+<dl class="dl-horizontal">
+  <dt>Text:</dt>
+  <dd><%= @news.text %></dd>
+
+  <dt>Posted at:</dt>
+  <dd><%= @news.posted_at %></dd>
+
+  <dt>News source:</dt>
+  <dd><%= @news.news_source %></dd>
+
+  <dt>News source:</dt>
+  <dd><%= @news.news_source_reference %></dd>
+
+  <dt>Created by:</dt>
+  <dd><%= @news.created_by %></dd>
+
+  <dt>Updated by:</dt>
+  <dd><%= @news.updated_by %></dd>
+
+</dl>

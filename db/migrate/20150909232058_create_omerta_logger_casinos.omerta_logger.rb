@@ -4,7 +4,7 @@ class CreateOmertaLoggerCasinos < ActiveRecord::Migration
     create_table :omerta_logger_casinos do |t|
       t.integer :ext_casino_id, :limit => 2
       t.references :version, index: true
-      t.references :devise, index: true
+      t.references :user, index: true
       t.references :family, index: true
       t.integer :casino_type, :limit => 1
       t.integer :city, :limit => 1

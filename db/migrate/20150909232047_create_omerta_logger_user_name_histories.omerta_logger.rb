@@ -4,7 +4,7 @@ class CreateOmertaLoggerUserNameHistories < ActiveRecord::Migration
     create_table :omerta_logger_user_name_histories do |t|
       t.string :name
       t.datetime :date
-      t.references :devise, index: true
+      t.references :user, index: true
     end
   end
 end

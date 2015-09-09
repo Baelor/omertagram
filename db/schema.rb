@@ -11,13 +11,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150908212007) do
+ActiveRecord::Schema.define(version: 20150909232073) do
 
   create_table "chats", force: :cascade do |t|
     t.integer  "telegram_id"
     t.boolean  "news"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+  end
+
+  create_table "news", force: :cascade do |t|
+    t.string   "text"
+    t.datetime "posted_at"
+    t.integer  "news_source"
+    t.string   "news_source_reference"
+    t.integer  "created_by"
+    t.integer  "updated_by"
+    t.datetime "created_at",            null: false
+    t.datetime "updated_at",            null: false
   end
 
   create_table "omerta_logger_bullet_factories", force: :cascade do |t|
