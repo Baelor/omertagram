@@ -60,7 +60,7 @@ end
 gem 'omerta_logger', git: "git@github.com:Baelor/omerta_logger.git"
 
 # use telegram-bot-ruby to access the telegram bot API
-gem 'telegram-bot-ruby', '~> 0.2.6'
+gem 'telegram-bot-ruby', '~> 0.3.2'
 
 # use config to manage app configuration
 gem 'config'
