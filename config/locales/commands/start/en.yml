@@ -1,0 +1,4 @@
+en:
+  commands:
+    start:
+      welcome: "Hi! Use /news to subscribe to updates."

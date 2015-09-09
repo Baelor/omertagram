@@ -1,0 +1,6 @@
+en:
+  commands:
+    news:
+      latest_news: "I'll notify you whenever something interesting happens! Here's the latest news:"
+      unsubscribe: "Use /unsubscribe if you want to stop receiving updates."
+      subscribed: "Alright. I'll send you a message whenever something interesting happens!"

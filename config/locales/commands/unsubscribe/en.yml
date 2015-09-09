@@ -1,0 +1,5 @@
+en:
+  commands:
+    unsubscribe:
+      unsubscribed: "Okay, I won't bug you anymore. You can resubscribe at any time with /news"
+      not_subscribed: "Looks like you haven't subscribed anyway, so all good, won't bug you!"

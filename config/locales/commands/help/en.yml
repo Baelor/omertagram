@@ -1,0 +1,11 @@
+en:
+  commands:
+    help:
+      news: "/news - subscribe to war updates, news from Omerta and Omerta Beyond"
+      user: "/user <ingame> - show user status"
+      highranks: "/hr <family> - show the highrank overview for a family"
+      deaths: "/deaths [family] - show the last 10 deaths (optionally by family)"
+      follow: "/follow <ingame | family> - receive updates about a player or family"
+      unfollow: "/unfollow  <ingame | family> - stop receiving updates about a player or family"
+      unsubscribe: "/unsubscribe - stop receiving war updates, news from Omerta and Omerta Beyond"
+      homepage: "Visit my homepage at https://telegram.omertabeyond.net for more info!"

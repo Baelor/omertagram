@@ -1,0 +1,6 @@
+en:
+  commands:
+    user:
+      usage: "Usage: /user [ingame]"
+      line1: "User: %{name} | Rank: %{rank} | On%: %{online_percentage} | HPs: %{honor_points}"
+      line2: "Family: %{family} | Role: %{role} | Last seen: %{last_seen} ago"

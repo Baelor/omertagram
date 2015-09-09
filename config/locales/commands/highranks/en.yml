@@ -1,0 +1,7 @@
+en:
+  commands:
+    highranks:
+      usage: "Usage: /hr [family name]"
+      total_members:
+        one: "%{count} member total"
+        other: "%{count} members total"

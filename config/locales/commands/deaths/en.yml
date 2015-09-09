@@ -1,0 +1,4 @@
+en:
+  commands:
+    deaths:
+      header: "Name / Rank / Family / Role / Time"

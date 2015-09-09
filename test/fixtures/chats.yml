@@ -1,0 +1,20 @@
+# == Schema Information
+#
+# Table name: chats
+#
+#  id          :integer          not null, primary key
+#  telegram_id :integer
+#  news        :boolean
+#  created_at  :datetime         not null
+#  updated_at  :datetime         not null
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  telegram_id: 1
+  news: false
+
+two:
+  telegram_id: 1
+  news: false
