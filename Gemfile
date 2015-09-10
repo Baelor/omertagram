@@ -82,3 +82,9 @@ gem 'sinatra', :require => nil
 
 # use foreman to manage app processes
 gem 'foreman', '~> 0.78.0'
+
+# parse rss feeds with feedjira
+gem 'feedjira', '~> 2.0.0'
+
+# use clockwork to schedule reoccurring jobs
+gem 'clockwork', '~> 1.2.0'

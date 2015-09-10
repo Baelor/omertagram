@@ -1,7 +1,7 @@
 require 'telegram/bot'
-class Bot
+class OmertagramBot
   def initialize
-    Dir["#{Rails.root}/lib/commands/*.rb"].each { |file| load file }
+    Dir["#{Rails.root}/lib/commands/*.rb"].each { |file| load file } unless Object.const_defined? 'Commands::Base'
     @commands = {}
     cmdclasses = Commands.constants.map(&Commands.method(:const_get)).grep(Class).reject { |cmd| cmd.name == 'Commands::Base' }
     cmdclasses.each do |cmd|

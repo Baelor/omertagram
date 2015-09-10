@@ -1,1 +1,3 @@
 domain: 'com'
+news_scrapers:
+  - :omerta_beyond

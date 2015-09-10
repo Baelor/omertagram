@@ -3,9 +3,15 @@ module Commands
     def execute
       chat = current_chat
       if chat.news
-        reply I18n.t 'commands.news.latest_news'
-        # TODO: send 5 last news updates
-        reply I18n.t 'commands.news.unsubscribe'
+        msg = []
+        msg << I18n.t('commands.news.latest_news')
+        news = []
+        ::News.all.order(posted_at: :desc).limit(5).find_each do |n|
+          news << n.text
+        end
+        msg << news.join("\n---------------------------------------\n")
+        msg << I18n.t('commands.news.unsubscribe')
+        reply msg
       else
         chat.news = true
         chat.save

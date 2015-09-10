@@ -1,3 +1,5 @@
+require "#{Rails.root}/lib/omertagram_bot"
+
 # == Schema Information
 #
 # Table name: news
@@ -20,7 +22,7 @@ class News < ActiveRecord::Base
   end
 
   def broadcast
-    bot = Bot.new
+    bot = OmertagramBot.new
     bot.run_client do |client|
       Chat.where(news: true).find_each do |c|
         client.api.sendMessage(chat_id: c.telegram_id, text: text)
